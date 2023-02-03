@@ -1,0 +1,41 @@
+### 회원가입 ( 고객 )
+POST https://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+ "birth": "1995-12-20",
+ "email": "jungds95@naver.com",
+ "name": "myName",
+ "paswwrod": "pw",
+ "phone": "01000000000",
+}
+### 이메일 인증 ( 고객 )
+POST https://localhost:8081/signup/customer/verify?email=jungds95@naver.com&code=c8oNfeln0A
+
+### 로그인 ( 고객 )
+POST https://localhost:8081/signin/customer
+Content-Type: application/json
+
+{
+  "email": "jungds95@naver.com",
+  "paswwrod": "pw"
+}
+### 회원 정보 조회 ( 고객 )
+POST https://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN:
+
+### 잔액 변경 ( 고객 )
+POST https://localhost:8081/signin/balance
+Content-Type: application/json
+X-AUTH-TOKEN:
+{
+  "from": "server",
+  "message": "돈 충전",
+  "money": 50000
+}
+##########################
+
+### 회원가입 ( 셀러 )
+
+### 로그인 ( 셀러 )
