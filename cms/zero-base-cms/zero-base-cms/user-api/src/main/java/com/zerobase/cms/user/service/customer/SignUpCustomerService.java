@@ -1,4 +1,4 @@
-package com.zerobase.cms.user.service;
+package com.zerobase.cms.user.service.customer;
 
 import com.zerobase.cms.user.domain.SignUpForm;
 import com.zerobase.cms.user.domain.model.Customer;
@@ -8,10 +8,13 @@ import com.zerobase.cms.user.exception.ErrorCode;
 import java.time.LocalDateTime;
 import java.util.Locale;
 import java.util.Optional;
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@RequiredArgsConstructor
 public class SignUpCustomerService {
     private final CustomerRepository customerRepository;
 
@@ -52,7 +55,5 @@ public class SignUpCustomerService {
         }
     }
 
-    public SignUpCustomerService(final CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
-    }
+
 }
