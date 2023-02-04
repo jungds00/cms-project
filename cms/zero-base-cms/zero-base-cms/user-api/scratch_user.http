@@ -6,7 +6,7 @@ Content-Type: application/json
  "birth": "1995-12-20",
  "email": "jungds95@naver.com",
  "name": "myName",
- "paswwrod": "pw",
+ "paswwrod": "my",
  "phone": "01000000000",
 }
 ### 이메일 인증 ( 고객 )
@@ -34,8 +34,25 @@ X-AUTH-TOKEN:
   "message": "돈 충전",
   "money": 50000
 }
-##########################
-
 ### 회원가입 ( 셀러 )
+POST https://localhost:8081/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "1995-12-20",
+  "email": "jungds95@naver.com",
+  "name": "myName",
+  "paswwrod": "my",
+  "phone": "01000000000",
+}
+### 이메일 인증 ( 셀러 )
+POST https://localhost:8081/signup/seller/verify?email=jungds95@naver.com&code=c8oNfeln0A
 
 ### 로그인 ( 셀러 )
+POST https://localhost:8081/signin/seller
+Content-Type: application/json
+
+{
+  "email": "jungds95@naver.com",
+  "paswwrod": "pw"
+}
