@@ -14,8 +14,6 @@ X-AUTH-TOKEN:
  ],
   "name": "나이키 에어포스"
 }
-### 이메일 인증 ( 고객 )
-POST https://localhost:8082/signup/customer/verify?email=jungds95@naver.com&code=c8oNfeln0A
 ### 상품 아이템 추가
 POST https://localhost:8082/seller/product
 Content-Type: application/json
@@ -28,5 +26,33 @@ X-AUTH-TOKEN:
       "price": 100000
 
 }
-### 이메일 인증 ( 고객 )
-POST https://localhost:8082/signup/customer/verify?email=jungds95@naver.com&code=c8oNfeln0A
+### 상품 수정
+PUT https://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN:
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "id": 1,
+      "count": 1,
+      "name": "280",
+      "price": 100000
+    }
+  ],
+  "id": 1,
+  "name": "나이키 에어포스 한정판"
+}
+### 상품 아이템 수정
+PUT https://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN:
+
+{
+  "id": 1,
+  "count": 1,
+  "name": "280",
+  "price": 100000
+
+}
