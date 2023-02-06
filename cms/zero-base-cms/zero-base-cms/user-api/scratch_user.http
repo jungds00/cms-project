@@ -32,7 +32,7 @@ X-AUTH-TOKEN:
 {
   "from": "server",
   "message": "돈 충전",
-  "money": 50000
+  "money": 100000
 }
 ### 회원가입 ( 셀러 )
 POST https://localhost:8081/signup/seller
