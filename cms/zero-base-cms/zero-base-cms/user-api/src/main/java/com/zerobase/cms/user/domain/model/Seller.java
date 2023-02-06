@@ -1,5 +1,6 @@
 package com.zerobase.cms.user.domain.model;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import com.zerobase.cms.user.domain.SignUpForm;
 import lombok.*;
 import org.hibernate.envers.AuditOverride;
@@ -16,9 +17,8 @@ import java.util.Locale;
 @NoArgsConstructor
 @AllArgsConstructor
 @AuditOverride(forClass = BaseEntity.class)
-public class Customer extends BaseEntity{
+public class Seller extends BaseEntity {
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true)
@@ -32,10 +32,8 @@ public class Customer extends BaseEntity{
     private String verificationCode;
     private boolean verify;
 
-
-    private Integer balance;
-    public static Customer from(SignUpForm form){
-        return Customer.builder()
+    public static Seller from(SignUpForm form){
+        return Seller.builder()
                 .email(form.getEmail().toLowerCase(Locale.ROOT))
                 .password(form.getPassword())
                 .name(form.getName())
